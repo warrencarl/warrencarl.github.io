@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor ni Warren</title>
+</head>
+<style>
+    .option button {
+        margin-bottom: 5px;
+        cursor: pointer;
+        
+    }
+    textarea {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        position: fixed;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        box-shadow: none; /* Remove shadow if any */
+        resize: none; /* Disable resizing */
+    }
+    textarea:focus {
+        outline: none; /* Remove outline */
+      
+    }
+    #timezone {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        bottom: 0;
+        width: 100%;
+        margin-top: 0px;
+        text-align: center;
+        font-size: small;
+        font-weight: bold;
+        color: darkgreen;
+        margin-bottom: 0px;
+    }
+    #timezone p {
+        
+        margin-top: 0px;
+        margin-bottom: 0px;
+        
+    }
+    button {
+        padding: 5px 10px;
+        font-size: 11px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        margin-bottom: 0px;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .search {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .search input {
+        width: 100%;
+        outline: none;
+    }
+    .search p {
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        margin-top: 5px;
+        margin-bottom: 0px;
+
+    }
+       
+    
+
+</style>
+<body>
+    <div class="search">
+        <input id="state" type="text" placeholder="Search State here...">
+        <p id="stateTimezone"></p>
+    </div>
+    <div class="option">
+            <button id="templates">Templates</button>
+            <button id="link">Links</button>
+            <button id="department">Departments</button>
+            <button id="osp">OSP</button>
+    </div>
+    <div id="timezone">
+            <label for="manila time">MNL: <p id="manila-time"></p></label>
+            <label for="pacific time">PST: <p id="pacific-time"></p></label>
+            <label for="eastern time">EST: <p id="eastern-time"></p></label>
+            <label for="central time">CST: <p id="central-time"> </p></label>
+    </div>
+    <hr>
+    <div>
+        <textarea  id="autoResizeTextarea" placeholder="Type here..."></textarea>
+    </div>
+    
+    
+    <!-- Script -->
+    <!-- search state start -->
+    <script>
+        const state = document.getElementById('state');
+        const stateTimezone = document.getElementById('stateTimezone');
+        state.addEventListener('input', () => {
+            const stateValue = state.value.toLowerCase();
+            setTimeout(() => {
+                    stateTimezone.textContent = '';
+                }, 5000);
+            if (stateValue === 'alabama') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'alaska') {
+                stateTimezone.textContent = 'Alaska Time';
+            } else if (stateValue === 'arizona') {
+            } else if (stateValue === 'arkansas') {
+            } else if (stateValue === 'california') {
+                stateTimezone.textContent = 'Pacific Time';
+            } else if (stateValue === 'colorado') {
+                stateTimezone.textContent = 'Mountain Time';
+            } else if (stateValue === 'connecticut') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'delaware') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'florida') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'georgia') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'hawaii') {
+                stateTimezone.textContent = 'Hawaii-Aleutian Time';
+            } else if (stateValue === 'idaho') {
+                stateTimezone.textContent = 'Mountain Time';
+            } else if (stateValue === 'illinois') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'indiana') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'iowa') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'kansas') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'kentucky') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'louisiana') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'maine') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'maryland') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'massachusetts') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'michigan') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'minnesota') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'mississippi') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'missouri') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'montana') {
+                stateTimezone.textContent = 'Mountain Time';
+            } else if (stateValue === 'nebraska') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'nevada') {
+                stateTimezone.textContent = 'Pacific Time';
+            } else if (stateValue === 'new hampshire') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'new jersey') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'new mexico') {
+                stateTimezone.textContent = 'Mountain Time';
+            } else if (stateValue === 'new york') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'north carolina') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'north dakota') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'ohio') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'oklahoma') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'oregon') {
+                stateTimezone.textContent = 'Pacific Time';
+            } else if (stateValue === 'pennsylvania') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'rhode island') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'south carolina') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'south dakota') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'tennessee') {
+                stateTimezone.textContent ='Central Time';
+            } else if (stateValue === 'texas') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'utah') {
+                stateTimezone.textContent = 'Mountain Time';
+            } else if (stateValue === 'vermont') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'virginia') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'washington') {
+                stateTimezone.textContent = 'Pacific Time';
+            } else if (stateValue === 'west virginia') {
+                stateTimezone.textContent = 'Eastern Time';
+            } else if (stateValue === 'wisconsin') {
+                stateTimezone.textContent = 'Central Time';
+            } else if (stateValue === 'wyoming') {
+                stateTimezone.textContent = 'Mountain Time';
+            } else if (stateValue === '') {
+                stateTimezone.textContent = '';
+            } else {
+                stateTimezone.textContent = 'State not found. Please check your spelling or send a request to the developer.';
+            }
+        });
+    </script>
+    <!-- search state end -->
+    <script>
+        //Timezone Start
+        function displayPacificTime() {
+            var pacificTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+            //remove the date and only show the time withouth seconds
+            pacificTime = pacificTime.split(", ")[1];
+            document.getElementById("pacific-time").textContent = pacificTime;
+        }
+        // Call the function to display the Pacific time immediately
+        displayPacificTime();
+
+        // Update the Pacific time every second
+        setInterval(displayPacificTime, 1000);
+
+        //display Eastern Time
+        function displayEasternTime() {
+            var easternTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+            easternTime = easternTime.split(", ")[1];
+            document.getElementById("eastern-time").textContent = easternTime;
+        }
+        displayEasternTime();
+        setInterval(displayEasternTime, 1000);
+
+        //display Central Time
+        function displayCentralTime() {
+            var centralTime = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
+            centralTime = centralTime.split(", ")[1];
+            document.getElementById("central-time").textContent = centralTime;
+        }
+        displayCentralTime();
+        setInterval(displayCentralTime, 1000);
+
+        //display Manila Time
+        function displayManilaTime()
+        {
+            var manilaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Manila"});
+            manilaTime = manilaTime.split(", ")[1];
+            document.getElementById("manila-time").textContent = manilaTime;
+        }
+        displayManilaTime();
+        setInterval(displayManilaTime, 1000);
+        //Timezone End
+    </script>
+    <script>
+        document.getElementById('templates').addEventListener('click', () => {
+            window.open('templates.html', 'Templates', 'width=600,height=400');
+        });
+        document.getElementById('link').addEventListener('click', () => {
+            window.open('link.html', 'Links', 'width=400,height=270');
+        });
+        document.getElementById('department').addEventListener('click', () => {
+            window.open('department.html', 'Departments', 'width=310,height=270');
+        });
+        document.getElementById('osp').addEventListener('click', () => {
+            window.open('osp.html', 'Departments', 'width=300,height=650');
+        });
+    </script>
+</body>
+</html>

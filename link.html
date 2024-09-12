@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+</head>
+<style>
+    
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        display: inline-block;
+        margin-left: 10px;
+        
+
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    p {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: small;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+    }
+    
+</style>
+<body>
+    <p style="font-weight: bold; margin-bottom: 0px;">Genesis</p>
+    <p>https://genesisptl.t-mobile.com/search-subscriber <button onclick="copyToClipboard('https://genesisptl.t-mobile.com/search-subscriber')">Copy</button></p>
+    <hr>
+    <p style="font-weight: bold; margin-bottom: 0px;">Pinninator</p>
+    <p>https://beta.launchpad.t-mobile.com/tpop-atlas-lite <button onclick="copyToClipboard('https://beta.launchpad.t-mobile.com/tpop-atlas-lite')">Copy</button></p>
+    <hr>
+    <p style="font-weight: bold; margin-bottom: 0px;">Aurora</p>
+    <p>https://t-mobile.archerirm.us/Default.aspx <button onclick="copyToClipboard('https://t-mobile.archerirm.us/Default.aspx')">Copy</button></p>
+    <hr>
+    <p style="font-weight: bold; margin-bottom: 0px;">iPort</p>
+    <p>https://iportproduction.t-mobile.com/iport/cases/search <button onclick="copyToClipboard('https://iportproduction.t-mobile.com/iport/cases/search')">Copy</button></p> 
+    <hr>
+
+    <script>
+        function copyToClipboard(text) {
+            var dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            if (text == 'https://genesisptl.t-mobile.com/search-subscriber') {
+               tooltip = document.createElement('div');
+                tooltip.textContent = "copied";
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = '50%';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translate(-50%, -50%)';
+                tooltip.style.padding = '10px';
+                tooltip.style.background = 'black';
+                tooltip.style.color = 'white';
+                tooltip.style.borderRadius = '5px';
+                tooltip.style.zIndex = '9999';
+                document.body.appendChild(tooltip);
+                setTimeout(() => {
+                    tooltip.style.display = 'none';
+                }, 1000);
+
+                
+                
+            } else if (text == 'https://beta.launchpad.t-mobile.com/tpop-atlas-lite') {
+                tooltip = document.createElement('div');
+                tooltip.textContent = "copied";
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = '50%';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translate(-50%, -50%)';
+                tooltip.style.padding = '10px';
+                tooltip.style.background = 'black';
+                tooltip.style.color = 'white';
+                tooltip.style.borderRadius = '5px';
+                tooltip.style.zIndex = '9999';
+                document.body.appendChild(tooltip);
+                setTimeout(() => {
+                    tooltip.style.display = 'none';
+                }, 1000);
+
+            } else if (text == 'https://t-mobile.archerirm.us/Default.aspx') {
+                tooltip = document.createElement('div');
+                tooltip.textContent = "copied";
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = '50%';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translate(-50%, -50%)';
+                tooltip.style.padding = '10px';
+                tooltip.style.background = 'black';
+                tooltip.style.color = 'white';
+                tooltip.style.borderRadius = '5px';
+                tooltip.style.zIndex = '9999';
+                document.body.appendChild(tooltip);
+                setTimeout(() => {
+                    tooltip.style.display = 'none';
+                }, 1000);
+
+            } else if (text == 'https://iportproduction.t-mobile.com/iport/cases/search') {
+                tooltip = document.createElement('div');
+                tooltip.textContent = "copied";
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = '50%';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translate(-50%, -50%)';
+                tooltip.style.padding = '10px';
+                tooltip.style.background = 'black';
+                tooltip.style.color = 'white';
+                tooltip.style.borderRadius = '5px';
+                tooltip.style.zIndex = '9999';
+                document.body.appendChild(tooltip);
+                setTimeout(() => {
+                    tooltip.style.display = 'none';
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
